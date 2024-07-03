@@ -7,12 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import Interfaces.InterfaceProducto;
-import Modelos.TblProductocl2;
+import Modelos.TblProductocl3;
 
 public class ClassProducto implements InterfaceProducto {
 
 	@Override
-	public void RegistrarProducto(TblProductocl2 producto) {
+	public void RegistrarProducto(TblProductocl3 producto) {
 		//establecer conexion con la unidad de persistencia...
 		EntityManagerFactory fabr=Persistence.createEntityManagerFactory("LPII_CL2_GUTIERREZ_RIVEROS");
 	    //permite gestionar entidades
@@ -30,7 +30,7 @@ public class ClassProducto implements InterfaceProducto {
 	}
 
 	@Override
-	public List<TblProductocl2> ListadoProducto() {
+	public List<TblProductocl3> ListadoProducto() {
 		//establecemos la conexion con la unidad de persistencia..
         EntityManagerFactory fabr=Persistence.createEntityManagerFactory("LPII_CL2_GUTIERREZ_RIVEROS");
         //gestionamos las entidads
@@ -39,11 +39,72 @@ public class ClassProducto implements InterfaceProducto {
         em.getTransaction().begin();
         //recuperamos los clientes  de la base de datos
         //***********utilizando jpql
-        List<TblProductocl2> listadoProductos = em.createQuery("select c from TblProductocl2 c",TblProductocl2.class).getResultList();
+        List<TblProductocl3> listadoProductos = em.createQuery("select c from TblProductocl3 c",TblProductocl3.class).getResultList();
         //confirmamos la transaccion
         em.getTransaction().commit();
         //cerramos
         em.close();
 		return listadoProductos;
 	}
+
+	@Override
+	public void ActualizarProducto(TblProductocl3 producto) {
+		
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("LPII_CL2_GUTIERREZ_RIVEROS");
+		
+		EntityManager emanager = em.createEntityManager();
+	
+		emanager.getTransaction().begin();
+		
+		emanager.merge(producto);
+		
+		System.out.print("Producto actualizado en la BD");
+		
+		emanager.getTransaction().commit();
+		
+		emanager.close();
+		
+	}
+
+	@Override
+	public void EliminarProducto(TblProductocl3 producto) {
+		
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("LPII_CL2_GUTIERREZ_RIVEROS");
+
+		EntityManager emanager = em.createEntityManager();
+
+		emanager.getTransaction().begin();
+
+		TblProductocl3 elim = emanager.merge(producto);
+
+		emanager.remove(elim);
+
+		System.out.print("Producto eliminado de la BD");
+
+		emanager.getTransaction().commit();
+
+		emanager.close();
+		
+	}
+
+	@Override
+	public TblProductocl3 BuscarProducto(TblProductocl3 producto) {
+
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("LPII_CL2_GUTIERREZ_RIVEROS");
+		
+		EntityManager emanager = em.createEntityManager();
+		
+		emanager.getTransaction().begin();
+		
+		TblProductocl3 buscarProducto = emanager.find(TblProductocl3.class, producto.getIdproductocl3());
+		
+		emanager.getTransaction().commit();
+	
+		emanager.close();
+	
+		return buscarProducto;
+		
+	}
+
+
 }

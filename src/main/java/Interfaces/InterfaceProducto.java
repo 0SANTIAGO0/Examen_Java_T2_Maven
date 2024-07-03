@@ -2,11 +2,14 @@ package Interfaces;
 
 import java.util.List;
 
-import Modelos.TblProductocl2;
+import Modelos.TblProductocl3;
 
 public interface InterfaceProducto {
 	
-	public void RegistrarProducto(TblProductocl2 producto);		
-	public List<TblProductocl2> ListadoProducto();
+	public void RegistrarProducto(TblProductocl3 producto);
+	public void ActualizarProducto(TblProductocl3 producto);	
+	public void EliminarProducto(TblProductocl3 producto);
+	public TblProductocl3 BuscarProducto (TblProductocl3 producto);
+	public List<TblProductocl3> ListadoProducto();
 
 }

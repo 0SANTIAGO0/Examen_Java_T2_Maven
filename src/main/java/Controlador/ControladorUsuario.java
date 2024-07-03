@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Dao.ClassUsuario;
-import Modelos.TblUsuariocl2;
+import Modelos.TblUsuariocl3;
 
 /**
  * Servlet implementation class ControladorUsuario
@@ -42,7 +42,7 @@ public class ControladorUsuario extends HttpServlet {
 	     String clave = request.getParameter("password");
 
 	     //instancias
-	     TblUsuariocl2 usu = new TblUsuariocl2();
+	     TblUsuariocl3 usu = new TblUsuariocl3();
 	     ClassUsuario crud = new ClassUsuario();
 	     
 	     usu = crud.validarUsuario(login, clave);

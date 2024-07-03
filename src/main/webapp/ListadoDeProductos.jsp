@@ -1,4 +1,4 @@
-<%@page import="Modelos.TblProductocl2"%>
+<%@page import="Modelos.TblProductocl3"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -28,19 +28,21 @@
 </tr>
 
 <%
-List<TblProductocl2> listadoProducto=(List<TblProductocl2>)request.getAttribute("listadodeproductos");
+List<TblProductocl3> listadoProducto=(List<TblProductocl3>)request.getAttribute("listadodeproductos");
 //aplicamos una condicion..
 if(listadoProducto!=null){
 	//aplicamos un bucle for..
-	for(TblProductocl2 lis:listadoProducto){
+	for(TblProductocl3 lis:listadoProducto){
 		%>
 		<tr>
-		<td><%=lis.getIdproductocl2() %></td>
-		<td><%=lis.getNombrecl2() %></td>
-		<td><%=lis.getPrecioventacl2() %></td>
-		<td><%=lis.getPreciocompcl2() %></td>
-		<td><%=lis.getEstadocl2() %></td>
-		<td><%=lis.getDescripcl2() %></td>
+		<td><%=lis.getIdproductocl3() %></td>
+		<td><%=lis.getNombrecl3() %></td>
+		<td><%=lis.getPrecioventacl3() %></td>
+		<td><%=lis.getPreciocompcl3() %></td>
+		<td><%=lis.getEstadocl3() %></td>
+		<td><%=lis.getDescripcl3() %></td>
+		<td><a href="ControladorProducto?accion=Eliminar&idproductocl3=<%=lis.getIdproductocl3()%>">Eliminar</a></td>
+		<td><a href="ControladorProducto?accion=Modificar&idproductocl3=<%=lis.getIdproductocl3()%>">Actualizar</a></td>
 		
 		</tr>
 		

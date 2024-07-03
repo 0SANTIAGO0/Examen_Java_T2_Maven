@@ -2,11 +2,11 @@ package Interfaces;
 
 import java.util.List;
 
-import Modelos.TblUsuariocl2;
+import Modelos.TblUsuariocl3;
 
 public interface InterfaceUsusario {
 
-	public void RegistrarUsuario(TblUsuariocl2 usuario);	
-	public List<TblUsuariocl2> ListadoUsuario();
-	public TblUsuariocl2 validarUsuario(String vLogin, String vClave);
+	public void RegistrarUsuario(TblUsuariocl3 usuario);	
+	public List<TblUsuariocl3> ListadoUsuario();
+	public TblUsuariocl3 validarUsuario(String vLogin, String vClave);
 }

@@ -1,14 +1,14 @@
 package Test;
 
 import Dao.ClassUsuario;
-import Modelos.TblUsuariocl2;
+import Modelos.TblUsuariocl3;
 
 public class TestUsuario {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		TblUsuariocl2 usuario = new TblUsuariocl2();
+		TblUsuariocl3 usuario = new TblUsuariocl3();
 		ClassUsuario crud = new ClassUsuario();
 		
 		usuario = crud.validarUsuario("EDDY", "1234");

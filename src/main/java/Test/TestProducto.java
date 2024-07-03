@@ -3,31 +3,52 @@ package Test;
 import java.util.List;
 
 import Dao.ClassProducto;
-import Modelos.TblProductocl2;
+import Modelos.TblProductocl3;
 
 public class TestProducto {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		TblProductocl2 prod = new TblProductocl2();
+		TblProductocl3 prod = new TblProductocl3();
 		ClassProducto crud = new ClassProducto();
-	
-		List<TblProductocl2> listadoproductos = crud.ListadoProducto();
+	/*
+		List<TblProductocl3> listadoproductos = crud.ListadoProducto();
 		
-		for(TblProductocl2 listar:listadoproductos) {
+		for(TblProductocl3 listar:listadoproductos) {
 	
 		System.out.println(
-				"codigo :"+listar.getIdproductocl2()+"\n"+
-				"nombre :"+listar.getNombrecl2()+"\n"+
-				"precioVenta :"+listar.getPrecioventacl2()+"\n"+
-				"precioCompra :"+listar.getPreciocompcl2()+"\n"+
-				"Estado :"+listar.getEstadocl2() +"\n"+
-				"Descripcion :"+listar.getDescripcl2()+"\n"+
+				"codigo :"+listar.getIdproductocl3()+"\n"+
+				"nombre :"+listar.getNombrecl3()+"\n"+
+				"precioVenta :"+listar.getPrecioventacl3()+"\n"+
+				"precioCompra :"+listar.getPreciocompcl3()+"\n"+
+				"Estado :"+listar.getEstadocl3() +"\n"+
+				"Descripcion :"+listar.getDescripcl3()+"\n"+
 				"--------------------------------------------"+
 				"\n"
-				);
+				);}*/
+		
+		/*//actualizar
+		prod.setIdproductocl3(2);
+		prod.setNombrecl3("Leche Endulcorada");
+		prod.setPrecioventacl3(4.50);
+		prod.setPreciocompcl3(5.90);
+		prod.setEstadocl3("agotado");
+		prod.setDescripcl3("normal");		
+		// invocamos s metodo actualizar
+		crud.ActualizarProducto(prod);
+		*/
+		
+		//eliminar
+		//eliminamos el registro con idclientede numero cuatro
+		prod.setIdproductocl3(4);
+		//invocamos el metodo eliminar datos de la BD
+		crud.EliminarProducto(prod);
+		
+		
+		
 		}
 	}
 
-}
+
+

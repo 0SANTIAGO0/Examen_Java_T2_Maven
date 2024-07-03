@@ -2,8 +2,8 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="w3.org/2001/XMLSchema-instance" xsi:schemaLocation="xmlns.jcp.org/xml/ns/persistence xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
 	<persistence-unit name="LPII_CL2_GUTIERREZ_RIVEROS">
-		<class>Modelos.TblProductocl2</class>
-		<class>Modelos.TblUsuariocl2</class>
+		<class>Modelos.TblProductocl3</class>
+		<class>Modelos.TblUsuariocl3</class>
 
 		<!-- propiedades o configuración de la conexión a BASE DE DATOS -->
 		<properties>
